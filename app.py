@@ -6,13 +6,8 @@ import spacy
 from pypdf import PdfReader
 from docx import Document
 
-# Try loading model, otherwise download it
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    from spacy.cli import download
-    download("en_core_web_sm")
-    nlp = spacy.load("en_core_web_sm")
+# Load spacy model
+nlp = spacy.load("en_core_web_sm")
 
 def extract_text(file):
     text = ""
