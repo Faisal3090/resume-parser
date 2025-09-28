@@ -6,8 +6,9 @@ import spacy
 from pypdf import PdfReader
 from docx import Document
 
-# Load spacy model
-nlp = spacy.load('en_core_web_sm')
+# Load spaCy model (works on Streamlit Cloud too)
+import en_core_web_sm
+nlp = en_core_web_sm.load()
 
 def extract_text(file):
     text = ""
